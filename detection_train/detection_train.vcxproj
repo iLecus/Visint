@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -30,6 +30,7 @@
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
+    <UseOfMfc>false</UseOfMfc>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -70,8 +71,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>D:\opencv3\build\install\include\opencv;D:\opencv3\build\install\include\opencv2;D:\opencv3\build\install\include;$(IncludePath)</IncludePath>
-    <LibraryPath>D:\opencv3\build\install\x86\vc15\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\Program Files\Teledyne DALSA\Sapera\Classes\Basic;C:\Program Files\Teledyne DALSA\Sapera\Include;D:\opencv3\build\install\include\opencv;C:\Program Files\Teledyne DALSA\Sapera\Classes\Gui;D:\opencv3\build\install\include\opencv2;D:\opencv3\build\install\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files\Teledyne DALSA\Sapera\Lib\Win32;D:\opencv3\build\install\x86\vc15\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <IncludePath>D:\opencv3\build\install\include\opencv2;D:\opencv3\build\install\include\opencv;D:\opencv3\build\install\include;$(IncludePath)</IncludePath>
@@ -83,10 +84,13 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\Program Files\Teledyne DALSA\Sapera\Include;C:\Program Files\Teledyne DALSA\Sapera\Classes\Gui;C:\Program Files\Teledyne DALSA\Sapera\Classes\Basic;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>opencv_world341.lib;opencv_world341d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opencv_world341.lib;opencv_world341d.lib;corapi.lib;corppapi.lib;SapClassBasic.lib;SapClassGui.lib;SapClassGuiD.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <TargetMachine>MachineX86</TargetMachine>
+      <AdditionalLibraryDirectories>C:\Program Files\Teledyne DALSA\Sapera\Lib;C:\Program Files\Teledyne DALSA\Sapera\Lib\Win64\VS2015;C:\Program Files\Teledyne DALSA\Sapera\Lib\Win32\VS2015;C:\Program Files\Teledyne DALSA\Sapera\Lib\Win64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -128,7 +132,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="test1.cpp" />
+    <Library Include="C:\Program Files\Teledyne DALSA\Sapera\Lib\Win32\corapi.lib" />
+    <Library Include="C:\Program Files\Teledyne DALSA\Sapera\Lib\Win32\corppapi.lib" />
+    <Library Include="C:\Program Files\Teledyne DALSA\Sapera\Lib\Win32\SapClassBasic.lib" />
+    <Library Include="C:\Program Files\Teledyne DALSA\Sapera\Lib\Win32\VS2015\SapClassGui.lib" />
+    <Library Include="C:\Program Files\Teledyne DALSA\Sapera\Lib\Win32\VS2015\SapClassGuiD.lib" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

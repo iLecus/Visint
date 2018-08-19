@@ -15,8 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="test1.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
+    <Library Include="C:\Program Files\Teledyne DALSA\Sapera\Lib\Win32\SapClassBasic.lib" />
+    <Library Include="C:\Program Files\Teledyne DALSA\Sapera\Lib\Win32\VS2015\SapClassGui.lib" />
+    <Library Include="C:\Program Files\Teledyne DALSA\Sapera\Lib\Win32\VS2015\SapClassGuiD.lib" />
+    <Library Include="C:\Program Files\Teledyne DALSA\Sapera\Lib\Win32\corapi.lib" />
+    <Library Include="C:\Program Files\Teledyne DALSA\Sapera\Lib\Win32\corppapi.lib" />
   </ItemGroup>
 </Project>
